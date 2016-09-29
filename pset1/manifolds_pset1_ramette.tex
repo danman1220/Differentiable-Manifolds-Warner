@@ -1,0 +1,172 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Short Sectioned Assignment
+% LaTeX Template
+% Version 1.0 (5/5/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{mathrsfs}
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{Differentiable Manifolds} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge Problem Set 1: 1.1-1.4 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Joshua Ramette \& Daniel Halmrast} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 1.1}
+Problem 1.1: Prove that in Example 1.5(d) one does indeed obtain a differentiable structure on $S^d$.
+\\
+\\
+Example 1.5(d): The $d-sphere$ is the set
+\begin{equation}
+S^d =\{ x \in \mathbb{R} ^{d+1} | \sum_{i=1}^{d+1} x_i ^2 = 1 \}
+\end{equation}
+
+Let $n = (0,\dots,0,1)$ and $s = (0,\dots,0,-1)$. Then the standard differentiable structure on $S^d$ is obtained by taking $\mathscr{F}$ to be the maximal collection containing $(S^d - n, p_n)$ and $(S^d - s, p_s)$, where $p_n$ and $p_s$ are stereographic projections from $n$ and $s$ respectively. 
+\\
+
+$\mathscr{F}$ is a differentiable structure of class $C^{\infty}$, a collection of coordinate systems $\{(U_{\alpha}, \phi_{\alpha}) | \alpha \in A\}$ satisfying:
+
+(a) NTS: $\bigcup\limits_{\alpha \in A} U_{\alpha} = S^d$
+\\
+\\
+$(S^d - n) \subset S^d$ and $(S^d - s) \subset S^d \Rightarrow (S^d - n) \bigcup (S^d - s) \subset S^d$. Since $n \neq s, S^d \subset (S^d - n) \bigcup (S^d - s) \subset \bigcup\limits_{\alpha \in A} U_{\alpha}$. Then, $\bigcup\limits_{\alpha \in A} U_{\alpha} = S^d$ since $\bigcup\limits_{\alpha \in A} U_{\alpha} \subset S^d$ because by definition, $U_\alpha \subset S^d$ $\forall \alpha \in A$.
+\\
+\\
+(b) NTS: $\phi_\alpha \circ \phi_\beta ^{-1}$ is $C^\infty$ for all $\alpha, \beta \in A$.
+\\
+\\
+Since the example defines $\mathscr{F}$ to be the maximal collection containing $(S^d - n, p_n)$ and $(S^d - s, p_s)$, it is sufficient to show that $p_s \circ p_n^{-1}$ and $p_n \circ p_s^{-1}$ are $C^\infty$.
+\\
+Using the standard stereographic projections we have:
+\\
+$p_n: S^d \to \mathbb{R}^d; (x_1, x_2, \dots, x_d, x_{d+1}) \mapsto \frac{1}{1-x_{d+1}}(x_1, x_2, \dots, x_d)$ \\
+$p_s: S^d \to \mathbb{R}^d; (x_1, x_2, \dots, x_d, x_{d+1}) \mapsto \frac{1}{1+x_{d+1}}(x_1, x_2, \dots, x_d)$ \\
+Then the inverses are: \\
+$p_n^{-1}: \mathbb{R}^d \to  S^d; (x_1, x_2, \dots, x_d) \mapsto (1-x_{d+1})(x_1, x_2, \dots, x_d, \frac{x_{d+1}}{1-x_{d+1}})$ \\
+$p_s^{-1}:  \mathbb{R}^d  \to S^d; (x_1, x_2, \dots, x_d) \mapsto (1+x_{d+1})(x_1, x_2, \dots, x_d,  \frac{x_{d+1}}{1+x_{d+1}})$ \\
+where $x_{d+1} = \frac{(\sum_{i=1}^{d} x_i ^2) - 1}{(\sum_{i=1}^{d} x_i ^2) + 1}$ for $p_n^{-1}$ since $(1-x_{d+1})(x_1, x_2, \dots, x_d,  \frac{x_{d+1}}{1+x_{d+1}}) \in S^d \Rightarrow (1-x_{d+1})^2(\sum_{i=1}^{d} x_i ^2 +  \frac{x_{d+1} ^2}{(1-x_{d+1})^2}) = 1$. Then, $(1+(\sum_{i=1}^{d} x_i ^2))x_{d+1} ^2 - (2(\sum_{i=1}^{d} x_i ^2))x_{d+1} +  (\sum_{i=1}^{d} x_i ^2 - 1) =0$, and applying the quadratic equation we obtain the previous result, $x_{d+1} = \frac{(\sum_{i=1}^{d} x_i ^2) - 1}{(\sum_{i=1}^{d} x_i ^2) + 1}$. The other solution to the quadratic simply gives the position of the pole of the sphere where the stereographic line intersects the sphere. Similarly, for $p_s^{-1}$, $x_{d+1} = -\frac{(\sum_{i=1}^{d} x_i ^2) - 1}{(\sum_{i=1}^{d} x_i ^2) + 1}$.
+\\
+
+We can compose these formulas to obtain: \\
+$p_n \circ p_s ^{-1}: \mathbb{R}^d \to \mathbb{R}^d; (x_1, x_2, \dots, x_d) \mapsto \frac{(1+x_{d+1})}{(1-x_{d+1})}(x_1, x_2, \dots, x_d) $ \\
+$p_s \circ p_n ^{-1}: \mathbb{R}^d \to \mathbb{R}^d; (x_1, x_2, \dots, x_d) \mapsto \frac{(1-x_{d+1})}{(1+x_{d+1})}(x_1, x_2, \dots, x_d) $
+
+From the formulas above, $p_n \circ p_s ^{-1}$ and $p_s \circ p_n ^{-1}$ simply multiplies $(x_1, x_2, \dots, x_d)$ by a factor that is a composition of rational functions with domain $\mathbb{R}$ since the restrictions on $x_{d+1}$ gaurantee that the denominators do not go to zero $\Rightarrow p_n \circ p_s ^{-1}$ and $p_s \circ p_n ^{-1}$ are $C^{\infty}$ since each component function is $C^{\infty}$. \\
+(c) NTS $\mathscr{F}$ is maximal w.r.t. (b). This is satisfied by definition of the example.
+
+\section*{Problem 1.2}
+Problem 1.2: The usual differentiable structure on the real line $\mathbb{R}$ was obtained by taking $\mathscr{F}$ to be the maximal collection containing the identity map. Let $\mathscr{F}_1$ be the maximal collection (w.r.t 1.4(b)) containing the map $t \mapsto t^3$. Prove that $\mathscr{F} \neq \mathscr{F}_1$, but that ($\mathbb{R},\mathscr{F}$) and ($\mathbb{R},\mathscr{F}_1$) are diffeomorphic.
+\\
+\\
+First we show $\mathscr{F} \neq \mathscr{F}_1$ by showing that $(\mathbb{R}, t) \in \mathscr{F}$ but $(\mathbb{R}, t) \not \in \mathscr{F}_1$. $t \circ (t^3)^{-1} = t^{1/3} \not \in C^{\infty}$ on the intersection of their domains $(\mathbb{R})$, so it fails condition b) for $\mathscr{F_{1}}$. Therefore this coordinate map is not in $\mathscr{F}_1$ so $\mathscr{F} \neq \mathscr{F}_1$. \\
+
+However, they are diffeomorphic. The diffeomorphism is given by $\psi: (\mathbb{R}, \mathscr{F}) \to (\mathbb{R}, \mathscr{F}_1); t \mapsto t^{1/3}$. $\psi$ is bijective by definition, so we need to show that $\psi$ and $\psi ^{-1}$ are both $C^{\infty}$. \\
+
+To show $\psi$ is $C^{\infty}$ we let $\phi \in \mathscr{F}, \tau \in \mathscr{F}_1$. Then, $\tau \circ \psi \circ \phi^{-1}$ is $\tau \circ t^{1/3} \circ t \circ \phi^{-1} $ = ($\tau \circ t^{1/3}) \circ (t \circ \phi^{-1})$, which is $C^{\infty}$ since it is the composition of ($\tau \circ t^{1/3})$ and $(t \circ \phi^{-1})$ which are $C^{\infty}$ by definition of $\mathscr{F}$ and $\mathscr{F}_1$.\\
+\\
+Similarly, to show $\psi^{-1}$ is $C^{\infty}$, we check $\phi \circ \psi^{-1} \circ \tau^{-1} = \phi \circ t^3 \circ \tau^{-1} = \phi \circ t \circ \psi^{-1} \circ \tau^{-1} = (\phi \circ t) \circ (t^3 \circ \tau^{-1})$, which is $C^{\infty}$ for the same reasons.
+
+\section*{Problem 1.3}
+
+Problem 1.3: Let ${U_\alpha}$ be an open cover of a manifold $M$. Prove that there exists a refinement ${V_{\alpha}}$ such that $\overline{V_{\alpha}} \subset U_{\alpha}$ for each $\alpha$. 
+
+We first prove the following lemma: \\
+
+Lemma 1.1: For continuous function $\phi: M \to \mathbb{R}$ on a manifold $M$, $\phi(\partial $supp$(\phi)) = \{0\}$. To show this, observe that if $x \in \partial $supp$(\phi))$, then $\exists$ net $\{x_{\nu}\} $ converging to x such that $\{x_{\nu}\} \not \in $supp$(\phi))$ which implies that $\phi(x_{\nu}) = 0$. Since $x_{\nu} \to x$, $\phi(x_{\nu}) \to \phi(x)$. But $\phi(x_{\nu}) \to 0$. Since $\mathbb{R}$ is Hausdorff, convergence is unique and $\phi(x) = 0$.
+\\ \\
+Let $\{U_{\alpha}\}$ be any open cover of manifold $M$. Then by Theorem 1.11, there exists a partition of unity $\phi_{\alpha}$ subordinate to open cover $\{U_{\alpha}\}$. Let 
+
+\[V_{\alpha} = \textrm{Int(supp}(\phi_{\alpha}))\]
+
+ so that \[
+\overline{V_{\alpha}} = \textrm{supp}(\phi_{\alpha}) \subset U_{\alpha}.
+\]
+\\
+
+We now show that $\{V_{\alpha}\}$ is a refinement of $\{U_{\alpha}\}$. First, observe $V_{\alpha} \subset U_{\alpha} \forall \alpha$. This follows directly from the definition of $V_{\alpha}$. Next we show that $\{V_{\alpha}\}$ covers $M$. For a contradiction, suppose there exists $x \in M$ such that $x$ is not covered by $\{V_{\alpha}\}$, that is $x \not \in V_{\alpha} \forall \alpha$. Then, $x \not \in \textrm{Int(supp}(\phi_{\alpha}))\forall \alpha$. But, this means $x \in \partial $supp$(\phi) $ for some (possibly more than one) $\beta$ with the property $\sum \phi_{\beta} = 1$. However by lemma 1.1, $\phi_{\beta} (x) = 0$  $\forall \beta $, so $\sum \phi_{\beta} = 0$, a contradiction.
+
+\section*{Problem 1.4}
+
+Problem 1.4: Use the fact that manifolds are regular and paracompact to prove that manifolds are normal topological spaces.\\
+
+Let $C$ and $D$ be closed subsets of $M$. Then, by the regularity of $M, \forall d \in D$  $\exists V_d \ni d, U_d \supset C,$ where $V_d, U_d$ open and $U_d \cap V_d = \O $. We call $V_d$ and $U_d$ "regular pairs." \\
+
+Then observe that the set $\{V_d\}$ forms an open cover of $D$, and then $\{V_d\} \cup (M - D)$ covers $M$. By paracompactness of $M$, there is a locally finite refinement $\{Q_{\alpha}\}$ of this cover. Let $\mathscr{O}  = \{Q_{\alpha} : Q_{\alpha} \cap D \not = \O \}.$ $\mathscr{O}$ is then a locally finite open cover of $D$ and $Q \in \mathscr{O} \implies Q \subset V_d$ for some $d$. \\
+
+Then, let \[U_D = \bigcup_{Q \in \mathscr{O} } Q \] \\
+
+By the local finiteness of $ \mathscr{O} $, $ \forall c \in C$, there exists a neighborhood $W_c$ of  $c$ such that $W_c$ intersects only finitely many elements $Q$ in  $\mathscr{O}$. If $W_c$ intersects no elements $Q$ in  $\mathscr{O}$, then let $U_c = W_c$. Else, define $T = \{ Q_t\}_{t = 1}^{n} $ for $Q_t$ the elements of $\mathscr{O}$ that intersect $W_t$. Observe that for each $t$, $Q_t \subset V_t$ for some $V_t$. Let $U_t$ be the corresponding regular pair of $V_t$. Recall that for regular pairs, $U_t \cap V_t = \O$ and $U_t \supset C$. Then, since $Q_t \subset V_t$, $U_t \cap Q_t = \O$. Furthermore, since $C \subset U_t, c \in C \implies c \in U_t \forall t$. \\
+
+We can now construct our normal open set containing $C$. \\ Let \[ U_c = W_c \cap \bigcap_T U_t  \] \\
+It is easy to verify that for all $c \in C$, $U_c$ is open and contains $c$. Furthermore, we can show that $U_c \cap U_D = \O $. To see this, observe that $\forall Q \in \mathscr{O}, U_c \cap Q = (W_c \cap \bigcap_T U_t) \cap Q$ and either $W_c \cap Q = \O$ or $U_t \cap Q = \O$. \\
+
+Then, let  \[ U_C = \bigcup_{c \in C}U_c \] \\
+
+It is easy to verify that $U_C$ and $U_D$ form a normal pair.
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
