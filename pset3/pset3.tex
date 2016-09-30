@@ -95,7 +95,21 @@ Thus, if $A$ has a differentiable structure that makes $(A,i)$ a submanifold, it
 
 (b) Let $A \subset M$. If in the relative topology, $A$ has a differentiable structure such that $(A,i)$ is a submanifold of $M$, then $A$ has a unique submanifold structure such that $(A,i)$ is a submanifold of $M$.
 
+Let $A_r$ be $A$ under the relative topology with a differentiable structure such that it is a submanifold under the inclusion map $i_r$.
+Then, let $A_t$ be $A$ with any manifold structure that makes it a submanifold under the inclusion map $i_t$. 
+To show that $A_r$ is the unique manifold structure on $A$ that makes it a submanifold, we will show that $A_r$ and $A_t$ are diffeomorphic to each other. Furthermore, the diffeomorphism will be the identity map, and the two spaces are actually equal.\\
 
+By theorem 1.32, there exists a unique $\psi_0: A_t \to A_r$ such that $i_r \circle \psi_0 = i_t$.
+We will show that such a $\psi_0$ is a diffeomorphism. $\psi_0$ is automatically $C^{\infty}$ since $i_r$ is an imbedding (theorem 1.32b). 
+By the result of problem 6, if $\psi_0$ is bijective, and $d\psi_0$ is everywhere nonsingular, then $\psi_0$ is a diffeomorphism.\\
+$\psi_0$ is bijective, since $\psi_0 = i_r^{-1} \circle i_t$, which as a set operation is bijective. 
+($i_t$ is bijective onto its range, and $dom(i_r^{-1} = ran(i_t)$).\\
+
+To see that $d\psi_0$ is everywhere nonsingular, note that $d\psi_0 = d(i_r^{-1} \circle i_t)$. Since $i_r^{-1}$ is a homeomorphism, and $i_r$ is an immersion, $di_r^{-1}$ is nonsingular. Similarly, since $i_t$ is an immersion, $di_t$ is nonsingular.\\
+
+Therefore, $\psi_0$ is a diffeomorphism. Since $\psi_0 = i_r^{-1} \circle i_t$, which is the identity, the spaces are actually equal. 
+
+Thus, the manifold structure on $A$ is unique.
 %----------------------------------------------------------------------------------------
 
 \end{document}
