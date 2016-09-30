@@ -80,13 +80,13 @@ Problem 1.7: Prove the following: \\
 Suppose that there are two families of coordinate charts $\mathscr{F}_1$ and $\mathscr{F}_2$ on $A$ such that $(A,i)$ is a submanifold of $M$. We will show that these two families are compatible, and by the maximality of the differentiable structure, they share the same differentiable structure. \\
 
 Let $A_1$ be the manifold $A$ under $\mathscr{F}_1$, and $A_2$ be the manifold $A$ under $\mathscr{F}_2$. 
-Then, by theorem 1.32, there exists a unique mapping $\psi_0 : A_1 \to A_2$ such that $i\circle \psi_0 = i$, 
+Then, by theorem 1.32, there exists a unique mapping $\psi_0 : A_1 \to A_2$ such that $i\circ \psi_0 = i$, 
 where $i$ is the inclusion map that makes $A$ a submanifold. 
 By this relation, however, it must be that $\psi_0 = id$. 
 Since $A_1$ and $A_2$ have the same topology, $id$ is a homeomorphism, and by 1.32a, $\psi_0$ is $C^{\infty}$. \\
 So, let $(U_1, \phi_1)$ be a coordinate chart on $A_1$, and $(U_2, \phi_2)$ a coordinate chart on $A_2$. 
-By the existence of $\psi_0$, the map $\phi_2\circle\psi_0\circle\phi_1^{-1}$ exists and is $C^{\infty}$. 
-Furthermore, since $\psi_0 = id$, $\phi_2\circle\psi_0\circle\phi_1^{-1} = \phi_2\circle\phi_1^{-1}$ and is $C^{\infty}$. 
+By the existence of $\psi_0$, the map $\phi_2\circ\psi_0\circ\phi_1^{-1}$ exists and is $C^{\infty}$. 
+Furthermore, since $\psi_0 = id$, $\phi_2\circ\psi_0\circ\phi_1^{-1} = \phi_2\circ\phi_1^{-1}$ and is $C^{\infty}$. 
 Thus, since this holds for arbitrary coordinate charts on $A_1$ and $A_2$, $\mathscr{F}_1$ is compatible with $\mathscr{F}_2$. \\
 
 Thus, if $A$ has a differentiable structure that makes $(A,i)$ a submanifold, it is unique. 
@@ -99,15 +99,15 @@ Let $A_r$ be $A$ under the relative topology with a differentiable structure suc
 Then, let $A_t$ be $A$ with any manifold structure that makes it a submanifold under the inclusion map $i_t$. 
 To show that $A_r$ is the unique manifold structure on $A$ that makes it a submanifold, we will show that $A_r$ and $A_t$ are diffeomorphic to each other. Furthermore, the diffeomorphism will be the identity map, and the two spaces are actually equal.\\
 
-By theorem 1.32, there exists a unique $\psi_0: A_t \to A_r$ such that $i_r \circle \psi_0 = i_t$.
+By theorem 1.32, there exists a unique $\psi_0: A_t \to A_r$ such that $i_r \circ \psi_0 = i_t$.
 We will show that such a $\psi_0$ is a diffeomorphism. $\psi_0$ is automatically $C^{\infty}$ since $i_r$ is an imbedding (theorem 1.32b). 
 By the result of problem 6, if $\psi_0$ is bijective, and $d\psi_0$ is everywhere nonsingular, then $\psi_0$ is a diffeomorphism.\\
-$\psi_0$ is bijective, since $\psi_0 = i_r^{-1} \circle i_t$, which as a set operation is bijective. 
-($i_t$ is bijective onto its range, and $dom(i_r^{-1} = ran(i_t)$).\\
+$\psi_0$ is bijective, since $\psi_0 = i_r^{-1} \circ i_t$, which as a set operation is bijective. 
+($i_t$ is bijective onto its range, and dom$(i_r^{-1}$ = ran$(i_t)$).\\
 
-To see that $d\psi_0$ is everywhere nonsingular, note that $d\psi_0 = d(i_r^{-1} \circle i_t)$. Since $i_r^{-1}$ is a homeomorphism, and $i_r$ is an immersion, $di_r^{-1}$ is nonsingular. Similarly, since $i_t$ is an immersion, $di_t$ is nonsingular.\\
+To see that $d\psi_0$ is everywhere nonsingular, note that $d\psi_0 = d(i_r^{-1} \circ i_t)$. Since $i_r^{-1}$ is a homeomorphism, and $i_r$ is an immersion, $di_r^{-1}$ is nonsingular. Similarly, since $i_t$ is an immersion, $di_t$ is nonsingular.\\
 
-Therefore, $\psi_0$ is a diffeomorphism. Since $\psi_0 = i_r^{-1} \circle i_t$, which is the identity, the spaces are actually equal. 
+Therefore, $\psi_0$ is a diffeomorphism. Since $\psi_0 = i_r^{-1} \circ i_t$, which is the identity, the spaces are actually equal. 
 
 Thus, the manifold structure on $A$ is unique.
 %----------------------------------------------------------------------------------------
