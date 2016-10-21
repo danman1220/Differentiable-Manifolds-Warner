@@ -73,6 +73,26 @@
 %    PROBLEM 1
 %----------------------------------------------------------------------------------------
 
+\section*{Problem 1.8}
+
+Problem 1.8:\\
+Obtain the classical implicit function theorem from the general implicit function theorem stated in theorem 1.38.\\
+
+
+Theorem 1.38: Assume that $\psi:M^c \to N^d$ is $C^{\infty}$, that $n \in N$, $P=\psi^{-1}(n)$ is nonempty, and that $d\psi$ is surjective for all $m \in P$. 
+Then, $P$ has a unique manifold structure such that $(P,i)$ is a submanifold of $M$, and $i$ is an imbedding, and $\mathrm{dim}(P)=c-d$. \\
+
+Let $U \subset \mathbb{R}^{c-d} \times \mathbb{R}^d$ and $f: \mathbb{R}^c \to \mathbb{R}^d$. Furthermore, the jacobian is nonsingular in the first $d$ dimensions at a point $(r_0, s_0)$ such that $f(r_0, s_0) = 0$. Because of the continuity of the determinant of the first $d$ dimensions of the Jacobian, there exists a rectangular neighborhood $V_0 \times W_0 \subset U$ of $(r_0, s_0)$ such that that first $d$ dimensions of the Jacobian is nonsingular on this neighborhood, implying that the Jacobian is surjective. Then by 1.38, $P = f^{-1} |_{V_0 \times W_0}(0)$ is an imbedded submanifold of $V_0 \times W_0$ of dimension $c-d$. \\
+
+Now we construct $\pi_1: V_0 \times W_0 \to V_0$ the projection function, and $\pi_1 \circ \iota$ is $C^{\infty}$.  Then, $d(\pi_1 \circ \iota): T(P)_{(r_0,s_0)} \to T(V_0)_{r_0}$ is an isomorphism, and it follows from Theorem 1.30  that there exists an open set $(r_0,s_0) \in V \times W \subset V_0 \times W_0$, such that $(\pi_1 \circ \iota) ^{-1}|_{P \cap V \times W}: V \to P \cap V \times W$ is bijective, $C^{\infty}$. \\
+
+Then, consider $g = (\pi_2 \circ \iota) \circ (\pi_1 \circ \iota)^{-1} |_{P \cap V \times W}: V \to W$, which satisfies the requirements of the implitict function theorem. Let $(p,q) \in V \times W$. Then, $f(p,q) = 0 \implies (p,q) \in P$, and then $g(p) = (\pi_2 \circ \iota) \circ (\pi_1 \circ \iota)^{-1} (p) = \pi_2 \circ \iota (p,q) = q $ for the same unique $q$ because of the bijectivity of $(\pi_1 \circ \iota)^{-1}$. \\
+
+In instead we have $q = g(p)$, then $f(p, g(p)) = 0$ since $(p, g(p)) \in P$ because of the restriction built into the $g$ function.
+
+
+
+
 \section*{Problem 1.9}
 
 Problem 1.9:\\
@@ -102,18 +122,16 @@ It is simple to check that it does not contain either point, Therefore, this lev
 Consider as well the point $p=(\frac{-1}{3},\frac{-1}{3})$. 
 Obviously, it's level curve contains $(\frac{-1}{3},\frac{-1}{3})$. Therefore, the Jacobian is not everywhere nonsurjective, and the level curve is not an imbedded submanifold.
 
+\section*{Problem 1.10}
 
-\section*{Problem 1.8}
+Problem 1.10:\\
 
-Problem 1.8:\\
-Obtain the classical implicit function theorem from the general implicit function theorem stated in theorem 1.38.\\
+Let $M$ be a compact manifold of dimension $n$, and let $f: M \to \mathbb{R}^n$ be $C^{\infty}.$ Prove that $f$ cannot be everywhere non-singular. \\
 
-\begin{theorem}[1.38]
-Assume that $\psi:M^c \to N^d$ is $C^{\infty}$, that $n \in N$, $P=\psi^{-1}(n)$ is nonempty, and that $d\psi$ is surjective for all $m \in P$. 
-Then, $P$ has a unique manifold structure such that $(P,i)$ is a submanifold of $M$, and $i$ is an imbedding, and $\mathrm{dim}(P)=c-d$.
-\end{theorem}
+$M$ compact implies that $f(M)$ is also compact, which also implies it is closed, and bounded in $\mathbb{R}^n$ by Heine Borel. Thus, $f$ attains a maximum on $M$ at some point $x \in M$. But then the first derivatives with respect to a coordinate chart containing $x$ must all be zero, implying the Jacobian at that point is singular, thus $f$ cannot be everywhere nonsingular.
 
-Solution:\\
+
+
 
 
 %----------------------------------------------------------------------------------------
