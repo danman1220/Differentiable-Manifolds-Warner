@@ -25,6 +25,7 @@
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
 \usepackage{mathrsfs}
+\usepackage{tikz-cd} %commutative diagrams package
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 
@@ -53,7 +54,7 @@
 
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
 
-\title{    
+\title{
 \normalfont \normalsize 
 \textsc{Differentiable Manifolds} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
@@ -107,5 +108,68 @@ Suppose $(v \otimes w) \in V \otimes W).$ Then $(v \otimes w) = (\sum c_i e_i) \
 
 
 %----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%    PROBLEM 2
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 2.2}
+\subsection{Part a}
+
+Provide an example of a homogeneous tensor that is not decomposable
+
+\begin{proof}
+Let $V$ be a vector space, and $V \otimes V$ the corrseponding tensor product space.
+Furthermore, let $v, w$ be vectors in $V$.
+Then, the tensor $v \otimes w + w \otimes v$ is homogeneous of degree two, but is not decomposable.
+\end{proof}
+
+\subsection{Part b}
+
+Show that for $dim(V) \leq 3$, every homogeneous element of $\Lambda (V)$ is decomposable.
+
+\begin{proof}
+
+Let $V$ be a three dimensional vector space with basis $\{v_1, v_2, v_3\}$.
+Then, the corresponding exterior algebra has basis elements
+\\
+\begin{center}
+\begin{tabular}{c c c}
+                & $v_1 \wedge v_2 \wedge v_3$ &\\
+$v_1 \wedge v_2$  & $v_1 \wedge v_3$  & $v_2 \wedge v_3$\\
+$v_1$             & $v_2$               & $v_3$\\
+                  & $1$ &
+\end{tabular}
+\end{center}
+
+It suffices to check for degree two elements of $\Lambda(V)$ that they are decomposable.
+
+To this end, let $c_1 v_1 \wedge v_2 + c_2 v_1 \wedge v_3 + c_3 v_2 \wedge v_3$ be an arbitrary
+degree two element of the exterior algebra.
+Then, it is easy to see that 
+\[
+\begin{aligned}
+c_1 v_1 \wedge v_2 + c_2 v_1 \wedge v_3 + c_3 v_2 \wedge v_3 & = v_1 \wedge (c_1 v_2 + c_2 v_3) + c_3 v_2 \wedge v_3\\
+& = (v_1 -\frac{c_1}{c_3}v_3) \wedge (c_1v_2 + c_2v_3)
+\end{aligned}
+\]
+
+\end{proof}
+
+\subsection{Part c}
+
+Give an example of a homogeneous indecomposable element of $\Lambda(V)$.
+
+\begin{proof}
+The element $v_1 \wedge v_2 + v_3 \wedge v_4$ for linearly independent $v_1...v_4$ is indecomposable.
+\end{proof}
+
+\subsection{Part d}
+
+Is $\alpha \wedge \alpha = 0$?
+
+\begin{proof}
+Since $\alpha \wedge \alpha = -\alpha \wedge \alpha$, this implies $\alpha \wedge \alpha =0$.
+\end{proof}
 
 \end{document}
