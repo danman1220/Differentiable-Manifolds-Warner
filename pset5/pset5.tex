@@ -75,7 +75,7 @@
 %----------------------------------------------------------------------------------------
 
 \section*{Problem 2.1}
-\subsection*{Part a}
+(a)
 
 Let U, V, W be vector spaces, with $\phi: V \times W \to V \otimes W$ the natural mapping, $ l: V \times W \to U$ bilinear. \\
 
@@ -120,7 +120,7 @@ and $\phi_B = \widetilde{\phi_B} \circ \widetilde{\phi_X} \circ \phi_B$.
 Thus, $\widetilde{\phi_B}$ and $\widetilde{\phi_X}$ are inverses of each other that compose to the identity,
 and form an isomorphism of $X$ and $B$.
 
-\subsection*{Part b}
+(b)
 Now we also prove universality within a general category. In a general category $C$, let $X$ and $Y$ satisfy the mapping property for $A$. \\
 
 $V \otimes W \cong W \otimes V$. Define the isomorphism as, for $\psi: V \times W \to W \times V$ the canonical isomorphism, $\psi_0: V \otimes W \to W \otimes V$. \\
@@ -130,11 +130,11 @@ Let $\phi$ be the bilinear map from part (a) of $V \times W$ into $V \otimes W$ 
 Then, $ \psi_0 = \phi' \circ \psi$, with natural inverse $\psi_0 ^{-1} = \phi \circ \psi^{-1}$ 
 where $\psi_0$ is extended to all of $V \otimes W$ via linearity. \\
 
-\subsection*{Part c}
+(c)
 
 $U \otimes (V \otimes W) = (U \otimes V) \otimes W$. Apply the same lifting as (b) on $\psi: U \times (V \times W) \to (U \times V) \times W$.\\
 
-\subsection*{Part d}
+(d)
 
 $\alpha$ is injective by linearity $\alpha(v_1) - \alpha(v_2) = 0 \to \alpha(v_1 - v_2) = 0$ and triviality of the kernel. \\
 
@@ -142,7 +142,7 @@ Let $T: V \to W$ be an element of Hom$(V,W)$. $T(x_i) = \sum c_j y_j = w_i$.
 Then, $T(V) = T(\sum c_i y_i) = \sum c_i T(x_i)  = \sum c_i (\sum(c_j y_j))  = \sum_i w_i $. Let $f_i =  \pi_i$ be the $i$-th coordinate projection. 
 Then $T(V) = \sum f_i(v) w_i = \sum\alpha(f_i \otimes w_i)(v) = \alpha(\sum(f_i \otimes w_i)(v).$ Then $\alpha$ is surjective as well. \\
 
-\subsection*{Part e}
+(e)
 
 Suppose $(v \otimes w) \in V \otimes W)$.
 Then $(v \otimes w) = (\sum c_i e_i) \otimes (\sum d_j f_j) = \sum_i((c_i e_i) \otimes (\sum d_j f_j)) =  \sum_ic_i (e_i \otimes (\sum d_j f_j)) =  \sum_i \sum_j c_i (e_i \otimes (d_j f_j)) = \sum_i \sum_j c_i d_j (e_i \otimes f_j)$. 
@@ -156,7 +156,7 @@ Thus the desired set is a basis.
 %----------------------------------------------------------------------------------------
 
 \section*{Problem 2.2}
-\subsection*{Part a}
+(a)
 
 Provide an example of a homogeneous tensor that is not decomposable
 
@@ -166,7 +166,7 @@ Furthermore, let $v, w$ be vectors in $V$.
 Then, the tensor $v \otimes w + w \otimes v$ is homogeneous of degree two, but is not decomposable.
 \end{proof}
 
-\subsection*{Part b}
+(b)
 
 Show that for $dim(V) \leq 3$, every homogeneous element of $\Lambda (V)$ is decomposable.
 
@@ -198,7 +198,7 @@ c_1 v_1 \wedge v_2 + c_2 v_1 \wedge v_3 + c_3 v_2 \wedge v_3 & = v_1 \wedge (c_1
 
 \end{proof}
 
-\subsection*{Part c}
+(c)
 
 Give an example of a homogeneous indecomposable element of $\Lambda(V)$.
 
@@ -206,7 +206,7 @@ Give an example of a homogeneous indecomposable element of $\Lambda(V)$.
 The element $v_1 \wedge v_2 + v_3 \wedge v_4$ for linearly independent $v_1...v_4$ is indecomposable.
 \end{proof}
 
-\subsection*{Part d}
+(d)
 
 Is $\alpha \wedge \alpha = 0$?
 
