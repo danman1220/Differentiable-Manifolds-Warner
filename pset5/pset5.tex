@@ -58,7 +58,7 @@
 \normalfont \normalsize 
 \textsc{Differentiable Manifolds} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Problem Set 4: 1.9 \\ % The assignment title
+\huge Problem Set 5 \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -86,8 +86,9 @@ It is clear that $\widetilde{l} \circ \phi(v, w) $ = $\widetilde{l} (v \otimes w
 
 Uniqueness: Suppose $\widetilde{l}'$ is another linear lifting of $l$. Then, for $(v_0, w_0)$, $\widetilde{l} \circ \phi(v_0, w_0) = \widetilde{l}(v_0 \otimes w_0) = l(v_0,w_0) = \widetilde{l}' \circ \phi(v_0,w_0) = \widetilde{l}'(v_0 \otimes w_0) $, and thus $\widetilde{l}' = \widetilde{l}$. \\
 
-(b) \\
+Now we also prove universality within a general category. In a general category $C$, let $X$ and $Y$ satisfy the mapping property for $A$. \\
 
+(b) \\
 $V \otimes W \cong W \otimes V$. Define the isomorphism as, for $\psi: V \times W \to W \times V$ the canonical isomorphism, $\psi_0: V \otimes W \to W \otimes V$. \\
 
 Let $\phi$ be the bilinear map from part (a) of $V \times W$ into $V \otimes W$ and $\phi'$ the bilinear map of $W \times V$ into $W \otimes V$. Then, $ \psi_0 = \phi' \circ \psi$, with natural inverse $\psi_0 ^{-1} = \phi \circ \psi^{-1}$ where $\psi_0$ is extended to all of $V \otimes W$ via linearity. \\
@@ -169,7 +170,21 @@ The element $v_1 \wedge v_2 + v_3 \wedge v_4$ for linearly independent $v_1...v_
 Is $\alpha \wedge \alpha = 0$?
 
 \begin{proof}
-Since $\alpha \wedge \alpha = -\alpha \wedge \alpha$, this implies $\alpha \wedge \alpha =0$.
+Decomposable elements of $\alpha$ wedge together to zero, meaning $\alpha \wedge \alpha = 0$.
 \end{proof}
+
+\section*{Problem 2.3}
+
+(a) \\ Let $u \in \Lambda_k (V)$ and $v \in \Lambda_l (V)$. Then, $u$ and $v$ are homogeneous and the wedge product $u \wedge v$ is an element of $\Lambda_{k+l} (V)$ by the definition of the exterior algebra as $C(V)/I(V)$, following from the definition of the tensor product of homogeneous tensors. Since $u,v$ are homogenous, $u = u_1 \wedge ...\wedge u_k$ and $v = v_1 \wedge ...\wedge v_l$, and thus $u \wedge v = u_1 \wedge ...\wedge u_k \wedge v_1 \wedge ...\wedge v_l = (-1)^k v_1 \wedge u_1 \wedge ...\wedge u_k \wedge v_2 \wedge ...\wedge v_l = (-1)^k (-1)^l v_1 \wedge ...\wedge v_l \wedge u_1 \wedge ...\wedge u_k \wedge = (-1)^{kl} v \wedge u$ \\
+
+(b) \\ First we show that $\{e_{\Phi}\}$ is a basis of $\Lambda(V)$. Observe that the elements of $\{e_{\Phi}\}$ span $\Lambda(V)$. To show linear independence of the set, consider $\sum a_\Phi e_\Phi = 0$. Then, $(\sum a_\Phi e_\Phi) \wedge (e_1 \wedge ... \wedge e_n) = a_{\emptyset}(e_1 \wedge ... \wedge e_n) = 0.$ Then we induct; assume that $a_s = 0$ $\forall s$ such that $|s| \leq k$. \\
+Then, for $|s| \geq k+1$,  $\sum a_s e_s = 0, $  $(\sum a_\Phi e_\Phi) \wedge e_{\Phi^c} = a_{\Phi}(e_1 \wedge ...\wedge e_n) = 0$ which implies that $a_\Phi = 0$ for $|\Phi| = k+1$, where $\Phi^c$ is the set theoretic complement of $\Phi$. \\
+
+Furthermore, it is obvious that $\Lambda_d(V)$ is a 1 dimensional vector space and is isomorphic to $\mathbb{R},$ and that $\Lambda_{d+j}(V)$ is isomorphic to $\{0\}$. Furthermore, that dim$(\Lambda_k(V)) = 2^d$ and dim$(\Lambda_k(V)) = $
+
+
+
+
+
 
 \end{document}
