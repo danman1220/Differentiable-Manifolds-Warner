@@ -58,7 +58,7 @@
 \normalfont \normalsize 
 \textsc{Differentiable Manifolds} \\ [25pt] % Your university, school and/or department name(s)
 \horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Problem Set 5 \\ % The assignment title
+\huge Problem Set 5: 2.1, 2.2, 2.3 \\ % The assignment title
 \horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
 }
 
@@ -75,37 +75,78 @@
 %----------------------------------------------------------------------------------------
 
 \section*{Problem 2.1}
-(a) \\
+\subsection*{Part a}
+
 Let U, V, W be vector spaces, with $\phi: V \times W \to V \otimes W$ the natural mapping, $ l: V \times W \to U$ bilinear. \\
 
 NTS: exists unique $\widetilde{l}: V \otimes W \to U$ such that $\widetilde{l} \circ \phi = l$.\\
 
-Define $\widetilde{l}$ on decomposable tensors of the form $v \otimes w$ as $\widetilde{l}(v \otimes w) = l(v,w)$ and extend to all of $V \otimes W$ by linearity. \\
+Define $\widetilde{l}$ on decomposable tensors of the form $v \otimes w$ as $\widetilde{l}(v \otimes w) = l(v,w)$ 
+and extend to all of $V \otimes W$ by linearity. \\
 
 It is clear that $\widetilde{l} \circ \phi(v, w) $ = $\widetilde{l} (v \otimes w) $ = $l(v,w)$ and the diagram commutes.
 
-Uniqueness: Suppose $\widetilde{l}'$ is another linear lifting of $l$. Then, for $(v_0, w_0)$, $\widetilde{l} \circ \phi(v_0, w_0) = \widetilde{l}(v_0 \otimes w_0) = l(v_0,w_0) = \widetilde{l}' \circ \phi(v_0,w_0) = \widetilde{l}'(v_0 \otimes w_0) $, and thus $\widetilde{l}' = \widetilde{l}$. \\
+Uniqueness: Suppose $\widetilde{l}'$ is another linear lifting of $l$. 
+Then, for $(v_0, w_0)$, 
+$\widetilde{l} \circ \phi(v_0, w_0) = \widetilde{l}(v_0 \otimes w_0) = l(v_0,w_0) = \widetilde{l}' \circ \phi(v_0,w_0) = \widetilde{l}'(v_0 \otimes w_0)$,
+and thus $\widetilde{l}' = \widetilde{l}$. \\
 
+Now to prove isomorphism.
+The universal mapping property can be summarized in a commutative diagram:
+For some $A$, $B$ is said to satisfy the universal mapping property if $\forall C \forall l, \exists !\widetilde{l}$
+such that the following diagram commutes.\\
+\begin{center}
+\begin{tikzcd}
+B \arrow[dr, dashed, "\widetilde{l}"] \\
+A \arrow[r, "l"] \arrow[u, "\phi_B"]
+    & C
+\end{tikzcd}
+\end{center}
+
+To prove uniqueness, let $(X, \phi_X)$ be another object that satisfies the mapping property for $A$.
+Then, by applying the mapping property of $B$ to $X$, we get the following diagram.
+\begin{center}
+\begin{tikzcd}
+B \arrow[dr, dashed, "\widetilde{\phi_X}"] \\
+A \arrow[r, "\phi_X"] \arrow[u, "\phi_B"] \arrow[d, "\phi_B"]
+    & X \arrow[dl, dashed, "\widetilde{\phi_B}"]\\
+B
+\end{tikzcd}
+\end{center}
+
+Then, from the diagram, since $\widetilde{\phi_X} \circ \phi_B =\phi_X$ and $\widetilde{\phi_B} \circ \phi_X = \phi_B$,
+it follows that $\phi_X = \widetilde{\phi_X} \circ \widetilde{\phi_B} \circ \phi_X$
+and $\phi_B = \widetilde{\phi_B} \circ \widetilde{\phi_X} \circ \phi_B$.
+Thus, $\widetilde{\phi_B}$ and $\widetilde{\phi_X}$ are inverses of each other that compose to the identity,
+and form an isomorphism of $X$ and $B$.
+
+\subsection*{Part b}
 Now we also prove universality within a general category. In a general category $C$, let $X$ and $Y$ satisfy the mapping property for $A$. \\
 
-(b) \\
 $V \otimes W \cong W \otimes V$. Define the isomorphism as, for $\psi: V \times W \to W \times V$ the canonical isomorphism, $\psi_0: V \otimes W \to W \otimes V$. \\
 
-Let $\phi$ be the bilinear map from part (a) of $V \times W$ into $V \otimes W$ and $\phi'$ the bilinear map of $W \times V$ into $W \otimes V$. Then, $ \psi_0 = \phi' \circ \psi$, with natural inverse $\psi_0 ^{-1} = \phi \circ \psi^{-1}$ where $\psi_0$ is extended to all of $V \otimes W$ via linearity. \\
 
-(c) \\
+Let $\phi$ be the bilinear map from part (a) of $V \times W$ into $V \otimes W$ and $\phi'$ the bilinear map of $W \times V$ into $W \otimes V$. 
+Then, $ \psi_0 = \phi' \circ \psi$, with natural inverse $\psi_0 ^{-1} = \phi \circ \psi^{-1}$ 
+where $\psi_0$ is extended to all of $V \otimes W$ via linearity. \\
+
+\subsection*{Part c}
 
 $U \otimes (V \otimes W) = (U \otimes V) \otimes W$. Apply the same lifting as (b) on $\psi: U \times (V \times W) \to (U \times V) \times W$.\\
 
-(d) \\
+\subsection*{Part d}
 
 $\alpha$ is injective by linearity $\alpha(v_1) - \alpha(v_2) = 0 \to \alpha(v_1 - v_2) = 0$ and triviality of the kernel. \\
 
-Let $T: V \to W$ be an element of Hom$(V,W)$. $T(x_i) = \sum c_j y_j = w_i$. Then, $T(V) = T(\sum c_i y_i) = \sum c_i T(x_i)  = \sum c_i (\sum(c_j y_j))  = \sum_i w_i $. Let $f_i =  \pi_i$ be the $i$-th coordinate projection. Then $T(V) = \sum f_i(v) w_i = \sum\alpha(f_i \otimes w_i)(v) = \alpha(\sum(f_i \otimes w_i)(v).$ Then $\alpha$ is surjective as well. \\
+Let $T: V \to W$ be an element of Hom$(V,W)$. $T(x_i) = \sum c_j y_j = w_i$. 
+Then, $T(V) = T(\sum c_i y_i) = \sum c_i T(x_i)  = \sum c_i (\sum(c_j y_j))  = \sum_i w_i $. Let $f_i =  \pi_i$ be the $i$-th coordinate projection. 
+Then $T(V) = \sum f_i(v) w_i = \sum\alpha(f_i \otimes w_i)(v) = \alpha(\sum(f_i \otimes w_i)(v).$ Then $\alpha$ is surjective as well. \\
 
-(e) \\
+\subsection*{Part e}
 
-Suppose $(v \otimes w) \in V \otimes W).$ Then $(v \otimes w) = (\sum c_i e_i) \otimes (\sum d_j f_j) = \sum_i((c_i e_i) \otimes (\sum d_j f_j)) =  \sum_ic_i (e_i \otimes (\sum d_j f_j)) =  \sum_i \sum_j c_i (e_i \otimes (d_j f_j)) = \sum_i \sum_j c_i d_j (e_i \otimes f_j).$ Thus the desired set is a basis.
+Suppose $(v \otimes w) \in V \otimes W)$.
+Then $(v \otimes w) = (\sum c_i e_i) \otimes (\sum d_j f_j) = \sum_i((c_i e_i) \otimes (\sum d_j f_j)) =  \sum_ic_i (e_i \otimes (\sum d_j f_j)) =  \sum_i \sum_j c_i (e_i \otimes (d_j f_j)) = \sum_i \sum_j c_i d_j (e_i \otimes f_j)$. 
+Thus the desired set is a basis.
 
 
 %----------------------------------------------------------------------------------------
@@ -115,7 +156,7 @@ Suppose $(v \otimes w) \in V \otimes W).$ Then $(v \otimes w) = (\sum c_i e_i) \
 %----------------------------------------------------------------------------------------
 
 \section*{Problem 2.2}
-\subsection{Part a}
+\subsection*{Part a}
 
 Provide an example of a homogeneous tensor that is not decomposable
 
@@ -125,7 +166,7 @@ Furthermore, let $v, w$ be vectors in $V$.
 Then, the tensor $v \otimes w + w \otimes v$ is homogeneous of degree two, but is not decomposable.
 \end{proof}
 
-\subsection{Part b}
+\subsection*{Part b}
 
 Show that for $dim(V) \leq 3$, every homogeneous element of $\Lambda (V)$ is decomposable.
 
@@ -157,7 +198,7 @@ c_1 v_1 \wedge v_2 + c_2 v_1 \wedge v_3 + c_3 v_2 \wedge v_3 & = v_1 \wedge (c_1
 
 \end{proof}
 
-\subsection{Part c}
+\subsection*{Part c}
 
 Give an example of a homogeneous indecomposable element of $\Lambda(V)$.
 
@@ -165,7 +206,7 @@ Give an example of a homogeneous indecomposable element of $\Lambda(V)$.
 The element $v_1 \wedge v_2 + v_3 \wedge v_4$ for linearly independent $v_1...v_4$ is indecomposable.
 \end{proof}
 
-\subsection{Part d}
+\subsection*{Part d}
 
 Is $\alpha \wedge \alpha = 0$?
 
