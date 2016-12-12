@@ -1,0 +1,45 @@
+\section{Exact Sequence Tensors}
+
+\emph{Problem 5}: PRove that if you tensor a long exact sequence of torsionless
+sheaves with a sheaf $S$, then the resulting long sequence is still exact.
+\\
+
+\emph{Solution}: Let
+\[
+\ldots \to^1 T_{q-1} \to^2 T_q \to^3 T_{q+1} \to^4 \ldots
+\]
+be a long exact sequence of torsionless sheaves, and let $S$ be a sheaf. Then,
+let's examine the tensor product
+\[
+\ldots  \to^{1 \otimes id} T_{q-1} \otimes S 
+        \to^{2 \otimes id} T_q \otimes S 
+        \to^{3 \otimes id} T_{q+1} \otimes S
+        \to^{4 \otimes id} \ldots
+\]
+Furthermore, let's examine exactness of the sequence at $q$.
+\par
+We know from the exactness of the first sequence that
+$\text{ker}(3)=\text{im}(2)$.
+Then, $\text{ker}(3\otimes id)$ is 
+\[
+\left\{t\otimes s | t \in T_q, s \in S, 3(t)
+= 0\right\} \cup \left\{t \otimes s | t \in T_q, s \in S, id(s)=s=0\right\}
+\]
+Since $T_q$ is torsionless, nothing else from $S$ can cause the tensor product
+to collapse.
+\\
+But, $\left\{t \otimes s | t \in T_q, s \in S, id(s)=s=0\right\} = 
+    \{t\otimes 0\} = \{0\}$.
+So, $\text{ker}(3\otimes id) = \text{ker}(3)\otimes S$.
+\par
+Examining $\text{im}(2\otimes id)$, we see that
+\[
+\begin{aligned}
+\text{im}(2\otimes id) &= 
+        \left\{t\otimes s | t = 2(t'), t' \in T_{q-1}, s \in S\right\} \\
+                       &= \text{im}(2)\otimes S \\
+                       &= \text{ker}(3) \otimes S
+\end{aligned}
+\]
+Therefore, since $\text{ker}(3\otimes id) = \text{im}(2\otimes id)$, the tensor
+sequence is exact.

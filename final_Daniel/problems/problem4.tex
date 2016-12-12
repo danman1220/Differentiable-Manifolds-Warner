@@ -1,0 +1,28 @@
+\section{Wedge Product Preservatives}
+
+\emph{Problem 4}: Show that if $\alpha$ and $\beta$ are closed forms, then 
+$\alpha\wedge\beta$ is also closed. Furthermore, if they are exact, then their
+wedge is also exact.
+
+\emph{Solution}: I will begin by showing the preservation of closedness. if
+$\alpha$ and $\beta$ are closed, then $d\alpha=0$, and $d\beta=0$. Then,
+\[
+\begin{aligned}
+d(\alpha\wedge\beta) &= (d\alpha)\wedge\beta +
+                        (-1)^{\text{some power}}\alpha\wedge(d\beta)\\
+                     &= 0\wedge\beta +
+                        (-1)^{\text{some power}}\alpha\wedge0\\
+                     &= 0
+\end{aligned}
+\]
+So, $\alpha\wedge\beta$ is closed.
+\\
+Next, let's show exactness is preserved.
+Suppose $\alpha=d\lambda$ and$\beta=d\mu$. Then,
+\[
+\begin{aligned}
+\alpha\wedge\beta &= (d\lambda)\wedge(d\mu) \\
+                  &= d(\lambda\wedge(d\mu))
+\end{aligned}
+\]
+So, the wedge is exact.

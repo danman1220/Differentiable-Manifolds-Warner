@@ -1,0 +1,36 @@
+\section{The Exactness of Left Wedging}
+
+\emph{Problem 2}: Let $\xi \in V$. Prove that the composition
+\[
+\Lambda_p(V) \to^{\xi\wedge} \Lambda_{p+1}(V) \to^{\xi\wedge} \Lambda_{p+2}(V) 
+\]
+is exact.
+
+\emph{Solution}: First, I will prove that the sequence is a cochain complex.
+Then, I will prove that the sequence is exact at $p+1$.
+\\
+%-----------------
+% COCHAIN COMPLEX|
+%-----------------
+It is easy to see that the composition of any two sequential arrows is null. To
+see this, observe that the composition looks like
+\[
+\xi\wedge\xi\wedge v
+\]
+For some $v\in \Lambda_p(V)$. But, since $\xi\wedge\xi=0$, the whole product
+equals zero.
+\par
+%-----------
+% EXACTNESS|
+%-----------
+Exactness of the sequence involves showing that
+$\text{ker}(\xi\wedge) = \text{im}(\xi\wedge)$.
+However, the kernel of this map is precisely those exterior products in
+$\Lambda_{p+1}(V)$ that contain $\xi$ as one of their terms. (That is, vectors
+that have a component along $\xi$) It is clear that
+the image of this map is the same thing. Since the wedge product is alternating,
+it is possible to move the $\xi$ along any point of the wedge product. Thus, the
+image of $\xi\wedge$ is the elements of $\Lambda_{p+1}(V)$ that have $\xi$ as an
+element of their product.
+\\
+Thus, the sequence is exact.

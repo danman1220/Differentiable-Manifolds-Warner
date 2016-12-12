@@ -1,0 +1,102 @@
+\section{The Torus Skew Line}
+
+\emph{Problem 1}: The torus is the manifold $S^1 \times S^1$. Consider $S^1$ as 
+the unit circle in the complex plane. We define $\phi: \R \to S^1 \times S^1$ by
+
+\begin{center}
+$\phi(t) = (e^{2 \pi it}, e^{2 \pi i\alpha t})$
+\end{center}
+
+where $\alpha$ is an irrational number. Prove that $(\R, \phi)$ is a dense
+submanifold of $S^1 \times S^1$.
+\\
+\emph{Solution}:
+This proof will be done in two parts. First I will show that $(\R, \phi)$ is in
+fact a submanifold of the torus, then I will show that it is dense in the torus.
+
+
+\subsection*{$(\R,\phi)$ is a submanifold of $S^1 \times S^1$}
+
+A submanifold is a pair $(X, f)$ of a manifold $X$ and an immersion $f$ that is
+one-to-one. $\R$ is already known to be a manifold, so it suffices to show that
+$\phi$ is a one-to-one immersion.
+\\
+%-------------
+%  IMMERSION |
+%-------------
+In order for $\phi$ to be an immersion, $d\phi_x$ must be nonsingular
+$\forall x \in \R$. Since there is a global coordinate system on both the torus
+and $\R$, it suffices to check nonsingularity in these coordinate systems. To do
+so, $d\phi$ must be known. So,
+\begin{center}
+\[
+\begin{aligned}
+d\phi_x: &\R_x \to \mathbb{T}^2_{\phi(x)}              \\
+d\phi_x\left(\frac{\partial}{\partial t}_x \right)     &=
+        \frac{\partial(e^{2 \pi it})}{\partial t}_x
+        \frac{\partial}{\partial y_1}_{\phi(x)} +
+        \frac{\partial(e^{2 \pi i\alpha t})}{\partial t}_x
+        \frac{\partial}{\partial y_2}_{\phi(x)}        \\
+      &=2\pi ite^{2 \pi it}
+        \frac{\partial}{\partial y_1}_{\phi(x)} +
+        2\pi i \alpha te^{2\pi i\alpha t}
+        \frac{\partial}{\partial y_2}_{\phi(x)}        \\
+      &=2\pi it\left(e^{2 \pi it}
+        \frac{\partial}{\partial y_1}_{\phi(x)} +
+        \alpha e^{2\pi i\alpha t}
+        \frac{\partial}{\partial y_2}_{\phi(x)}\right) \\
+\end{aligned}
+\]
+\end{center}
+In order for this to be nonsingular, both the
+$\frac{\partial}{\partial y_1}_{\phi(x)}$ coordinate and the
+$\frac{\partial}{\partial y_2}_{\phi(x)}$ coordinate must not both be zero.
+Such a condition occurs when $e^{2\pi it}=\alpha e^{2\pi i \alpha t} = 0$.
+But, this implies that
+\[
+\begin{aligned}
+    \exists n_1, n_2 \in \Z, \\
+       t        &= n_1 \\
+       \alpha t &= n_2 \\
+    &\implies \alpha t - t \in \Z \\
+    &\implies \alpha - 1 \in \Z
+\end{aligned}
+\]
+But this violates the assumption that $\alpha$ is irrational. So, $d\phi$ must
+be nonsingular everywhere.
+\\
+%------------
+% INJECTION |
+%------------
+Next, $\phi$ must be an injective map.
+But, $\phi$ is easily seen to be nonsingular, by a similar argument to the one for
+$d\phi$. Thus, $\phi$ must be injective.
+
+\subsection*{$\phi(\R)$ Is Dense In $\mathbb{T}^2$}
+
+For the skew line to be dense in the torus, it must be that every open
+set in $\mathbb{T}^2$ intersects $\phi(\R)$.
+This will be shown by showing that any point in $\mathbb{T}^2$ is arbitrarily
+close to the skew line.
+\\
+To do this, I will view $\mathbb{T}^2$ as $\R^2\big/ \Z\times\Z$, and my maps as
+$\phi(t)\to[t,\alpha t]$. Here, $(x_1,y_1) \sim (x_2,y_2) \iff (x_2-x_1,y_2-y_1)
+\in \Z \times \Z$.
+\par
+Consider a point $[x,y]$. To show the skew line is dense in $\mathbb{T}^2$, I
+will show that it intersects the region $\{[x,y]|y\in(a,b)\}$, where $a$ and $b$
+are chosen as the endpoints of the $\frac{1}{2^n}$ partition of the unit
+interval that contains $y$.
+\par
+Suppose ther exists an $n$ such that the skew line does not intersect the box.
+Then, by the integer translational symmetry of this quotient space, the skew
+line does not intersect any of the other partitions of the interval. Thus, the
+skew line must be passing through the boundaries of the partition.
+\\
+However, there are only finitely many boundaries, so by the pidgeonhole
+principle, there must be at least one for which the skew line passes through
+twice. This violates the assumption that the skew line imbedding was one-to-one,
+and so it must not be the case that the skew line does not intersect the
+neighborhood of $[x,y]$. Therefore, the skew line is dense in $\mathbb{T}^2$.
+
+

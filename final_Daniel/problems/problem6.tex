@@ -1,0 +1,66 @@
+\section{Stars and Triangles Forever}
+
+\emph{Problem 6}: Let $\star: E^p(M)\to E^{n-p}(M)$ be the Hodge dual operator,
+which satisfies $\star \star = (-1)^{p(n-p)}$, and let
+$\delta: E^p(M) \to E^{p-1}(M)$ be defined as
+\[
+\delta = (-1)^{n(p+1)+1}\star d \star
+\]
+Then, the Laplace operator is
+$\Delta = \delta d + d\delta$, and is a linear operator on $E^p(M)$ for each $p$
+with $0 \leq p \leq n$. 
+
+\subsection*{The Laplacian on 0-forms}
+\emph{Part a}: Show that on $E^0(\R^n)$, the Laplacian is
+\[
+\Delta = (-1)\sum_{i=1}^n \frac{\partial^2}{\partial x_i^2}
+\]
+\\
+
+
+\emph{Solution}:
+It is \sout{easy} doable to show this identity computationally. Let $f\in
+E^0(\R^n)$. Then,
+\[
+\begin{aligned}
+\Delta f &= \delta df + d\delta f\\
+         &= \delta \left(\sum_{i=1}^{n}
+                \frac{\partial f}{\partial x_i}dx_i\right) + d(0)\\
+         &= (-1)^{n(0+1)+1}\star d \star \left(\sum_{i=1}^{n}
+                \frac{\partial f}{\partial x_i}dx_i\right)\\
+         &= (-1)^{n+1} \star d \left(\sum_{i=1}^{n}
+                \frac{\partial f}{\partial x_i}dx_i^{\star}\right)
+                \text{where $x_i^{\star}$ is the dual of $x_i$}\\
+         &= (-1)^{n+1} \star \left(\sum_{i=1}^{n}\frac{\partial}{\partial x_i}
+                \frac{\partial f}{\partial x_i}dx_i \wedge dx_i^{\star}\right)\\
+         &= (-1)^{n+1}\left(\sum_{i=1}^{n}
+                \frac{\partial^2 f}{\partial x_i^2}
+                \star(dx_i \wedge dx_i^{\star})\right)\\
+         &= (-1)^{n+1}\left(\sum_{i=1}^{n}
+                \frac{\partial^2 f}{\partial x_i^2}
+                (-1)^{i-1}(-1)^{i-1}\right)
+\end{aligned}
+\]
+%see problem 4.5 and page 221
+\subsection*{Finding $[\star,\Delta]$}
+\emph{Part b}: Prove that $\star$ commutes with $\Delta$.
+\\
+
+\emph{Solution}:
+Again, this is provable by direct computation.
+\[
+\begin{aligned}
+\star\Delta &= \star\left(\delta d + d\delta\right)\\
+            &= \star\delta d + \star d\delta\\
+            &= \star(-1)^{n(p+1)+1}\star d \star d +
+                \star d (-1)^{n(p+1)+1} \star d \star\\
+            &= (-1)^{n(p+1)+1} \star \star d \star d +
+                (-1)^{n(p+1)+1} \star d \star d \star\\
+            &= d (-1)^{n(p+1)+1}\star d\star \star +
+                (-1)^{n(p+1)+1} \star d \star d \star\\
+            &= d \delta \star + \delta d \star\\
+            &= \Delta\star
+\end{aligned}
+\]
+Where $\star\star$ was able to commute with other operators due to the fact that
+it is a scalar.

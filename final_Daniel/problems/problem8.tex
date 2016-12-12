@@ -1,0 +1,53 @@
+\section{The Story of Manifolds}
+
+\emph{Problem 8}: Tell the story of differentiable manifolds.
+\\
+\emph{Solution}:
+The study of topology allows mathematics to talk about more general spaces than
+just $\R^n$. In particular, there is a certain class of spaces that seem locally
+similar to Euclidean space, but globally differ in some meaningful way. (Think
+of $S^2$, which is locally homeomorphic to some subset of $\R^2$, but is
+a compact space, unlike $\R^2$) Euclidean space has a rich
+structure of differentiability that allows calculus to be done on it, and it
+seems natural to ask if such a structure can also be given to more general
+topological spaces.
+\par
+To that end, we define a differentiable manifold as a
+topological space that is locally Euclidean, along with a series of "co-ordinate
+systems" on open subsets of the space that satisfy the properties of a
+differentiable structure. In particular, the co-ordinate systems need to cover
+the whole space, they need to match up on overlaps in a $C^{\infty}$ way, and
+the set of co-ordinate maps must be maximal in the sense that it contains all
+possible compatible maps.
+\par
+With such a structure, it becomes possible to talk about generalized
+derivatives. By looking at linear derivations of germs of functions from the
+manifold to $\R$, we develop the idea of tangent vectors, which locally look
+like directional derivatives. Furthermore, by looking at wedge products of
+(duals of) these tangent vectors, we can develop a more general theory of
+differential forms on the manifold, which allow for integration over subsets of
+the manifold.
+\par
+In the category of differentiable manifolds, the objects are the manifolds, and
+the arrows are $C^{\infty}$ maps (in the sense that they preserve the
+$C^{\infty}$ness of the coordinates). Then, one can define a functor, known as
+exterior differentiation, from this category to the category of forms on
+differentiable manifolds.
+\par
+With these tools, we define integration of a differential form (which, in this
+case can be thought of as a generalized multidimensional function, vector field,
+etc.) on a manifold by locally "pulling back" the form to normal Euclidean
+space, and integrating the form in the usual way in $\R^N$.
+\par
+Not that the theory of manifolds is all analysis, though.
+Homology and cohomology information can be pulled from the
+manifold. For cohomology, the algebraic spaces are the spaces of p-dimensional
+forms on the manifold, and the arrows are exterior differentiation. For
+homology, the spaces are free combinations of maps of Euclidean shapes into the
+manifold, with the arrows being the boundary operation. From this, we get the
+powerful result that the qth differential cohomology of a manifold is isomorphic 
+to the dual of the qth simplicial homology, a result known as deRham's theorem.
+\par
+All in all, the theory of differentiable manifolds is a way to use local
+Euclidean-ness of certain topological spaces to develop calculus and algebra on
+those spaces.

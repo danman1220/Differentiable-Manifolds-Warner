@@ -1,0 +1,41 @@
+\section{Integration on Manifolds}
+
+\emph{Problem 7}: Give your favorite example of an integral on manifolds
+computation.
+\\
+
+\emph{Solution}: For this problem, we will compute the integral
+\[
+\int_{S^1}\frac{xdy -ydx}{x^2+y^2}
+\]
+For this integral, we will use the co-ordinate maps
+\[
+\begin{aligned}
+x &= r\cos(\theta)\\
+y &= r\sin(\theta)
+\end{aligned}
+\]
+which, by setting r to 1 and taking the exterior derivative, yields the
+identities
+\[
+\begin{aligned}
+dx &= -\sin(\theta)d\theta\\
+dy &=  \cos(\theta)d\theta
+\end{aligned}
+\]
+Then, the integral becomes
+\[
+\begin{aligned}
+\int_{S^1} (\sin^2(\theta) + \cos^2(\theta))d\theta &= \int_{S^1} d\theta\\
+                                             &= 2\pi
+\end{aligned}
+\]
+What makes this example interesting is the fact that the form integrated is
+actually a closed form on the space $\R^2\setminus\{0\}$. Furthermore, since the
+integral is nonzero, the form is not exact. This demonstrates that there exist
+closed 1-forms on $S^1$ that are not exact, which means that the first
+cohomology group of $S^1$ is nontrivial. Since $S^1$ is a typical example of a
+simple space that differs from Euclidean space, this form gives an example of
+something that breaks the triviality of the cohomology of Euclidean space. In
+particular, it suggests that singularities (like the one this form has at zero)
+have something to do with cohomology (and homology) breaking. 
